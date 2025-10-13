@@ -1,24 +1,36 @@
-//
-//  ContentView.swift
-//  sample_1
-//
-//  Created by 駒田隆人 on 2025/10/13.
-//
-
 import SwiftUI
-
-struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+struct ContentView: View{
+    @State private var count = 0
+    
+    var body: some View{
+        VStack(spacing: 20){
+            if(count == 10){
+                Text("👍すごい!")
+                Button("カウントリセット"){
+                    count = 0
+                }
+                .font(.title3)
+                .padding()
+                .background(Color.red)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
+            }else{
+                Text("カウント: \(count)")
+                    .font(.largeTitle)
+                    .bold()
+                Button("カウントアップ"){
+                    count += 1
+                }
+                .font(.title2)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .clipShape(Capsule())
+            }
         }
         .padding()
     }
 }
-
 #Preview {
     ContentView()
 }

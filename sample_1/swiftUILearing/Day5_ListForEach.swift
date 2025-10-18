@@ -64,22 +64,21 @@ struct ListForEachView: View {
 //                                .foregroundColor(.red)
 //                            
 //                        }
-//                        
+//
 //                    }
 //                }
                 ForEach($items){ $item in
                     HStack{
                         Toggle(isOn: $item.isDone) {
-//                            Text(item.isDone ? "完了" : "未完了")
                         }
                         .toggleStyle(.switch)
                         .padding(10)
-                            
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        
                         Text(item.title)
                             .strikethrough(item.isDone, color:  Color.gray)
                             .foregroundColor(item.isDone ? .gray : .primary)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Spacer()
                         
                         Button{
                             items.removeAll{ $0.id == item.id }
@@ -94,6 +93,6 @@ struct ListForEachView: View {
     }
 }
 
-//#Preview {
-//    ListForEachView()
-//}
+#Preview {
+    ListForEachView()
+}

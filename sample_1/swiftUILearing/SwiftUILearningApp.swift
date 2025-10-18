@@ -11,7 +11,9 @@ struct SwiftUILearningApp: App {
     var body: some Scene{
         WindowGroup{
 //            MyNewView()
-            ListForEachView()
+//            ListForEachView()
+//            PresistentToDOView()
+            PersistentToDOView()
         }
     }
 }

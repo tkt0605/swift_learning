@@ -13,7 +13,8 @@ struct SwiftUILearningApp: App {
 //            MyNewView()
 //            ListForEachView()
 //            PresistentToDOView()
-            PersistentToDOView()
+//            PersistentToDOView()
+            PersistentToDOsView()
         }
     }
 }
